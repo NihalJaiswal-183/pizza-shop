@@ -1,0 +1,9 @@
+create a directory
+create a npm project and install all dependancies
+dependancies
+ -express
+ -ejs-express-ejs-layouts
+ -Dev dependancies
+  -nodemon
+
+  
