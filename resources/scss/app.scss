@@ -1,0 +1,19 @@
+@import './_variables';
+
+
+body{
+    font-family: 'Baloo Bhai 2', cursive;
+    -webkit-font-smoothing: 'antialiased';
+    color: $dark;
+}
+
+nav li a:hover {
+    color:$primary;
+}
+
+section.hero{
+    background:$secondary;
+}
+
+
+
