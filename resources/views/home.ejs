@@ -14,210 +14,30 @@
     <section class="menu container mx-auto py-8">
         <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
         <div class="grid grid-cols-4 col gap-12 row-gap-16">
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
+            <% pizza.forEach(function(pizza){ %>
+                <div class="w-64">
+                    <img class="mb-4 mx-auto"
+                        src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
+                    <div class="text-center">
+                        <h2 class="mb-4 text-lg"><%= pizza.name%></pizza.name></h2>
+                        <span class="py-1 px-4 roundes-full uppercase text-xs"><%= pizza.size%></span>
+                        <div class="flex items-center justify-around">
+    
+                            <span class="font-bold text-lg"> ₹<%= pizza.price%></span>
+                            <button data-pizza="<%= JSON.stringify(pizza)
+                            %>" class="add-to-cart  py-1 px-6 rounded-full flex items-center">
+                                <span>+</span>
+                                <span>Add</span>
+                            </button>
+    
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
+                </div>                    
+                <%})%>
+           
 
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="mb-4 mx-auto"
-                    src="https://tse2.mm.bing.net/th?id=OIP.8zGMAZ5oQLFfyIon0mrwyQHaHO&pid=Api&P=0&w=155&h=152" alt="">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">margreeta</h2>
-                    <span class="py-1 px-4 roundes-full uppercase text-xs">small</span>
-                    <div class="flex items-center justify-around">
-
-                        <span class="font-bold text-lg">₹250</span>
-                        <button class="py-1 px-6 rounded-full flex items-center">
-                            <span>+</span>
-                            <span>Add</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
+            
+            
         </div>
     </section>
   
