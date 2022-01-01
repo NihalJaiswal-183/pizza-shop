@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const passport=require('passport');
 const express = require("express");
 const ejs = require("ejs");
 const expresslayout = require("express-ejs-layouts");
@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use(express.json());
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());
-
+app.use(express.urlencoded({extended:false}));
 // database config
 const cors = require("cors");
 
@@ -44,6 +44,9 @@ const Connection = async () => {
   }
 };
 Connection();
+
+
+
 const MongoDbStore = require("connect-mongo");
 app.use(
   session({
@@ -57,11 +60,18 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 * 24 },
   })
 );
+const passportInit=require('./app/config/passport');
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+//global declration
 app.use((req,res,next)=>{
     console.log(req.session);
 res.locals.session=req.session
+res.locals.user=req.user
 next();
 })
+
 require("./routes/web")(app);
 app.use(flash());
 

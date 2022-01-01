@@ -31,13 +31,19 @@
                 <li class="ml-6">
                     <a href="offer">offer</a>
                 </li>
-
+                <% if(!user) {%>
                 <li class="ml-6">
                     <a href="/register">register</a>
                 </li>
                 <li class="ml-6">
                     <a href="/login">login</a>
                 </li>
+                <%} else { %>
+                    <li class="ml-6">
+                        
+                        <a href="/logout">logout</a>
+                    </li>
+                    <%}%>
                 <li class=" ml-2 flex items-center">
                     <span id="cartCounter"  class=" font-bold mr-2"><%= session.cart?session.cart.totalQty:0 %></span>
                     <a href="cart"><img
