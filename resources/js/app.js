@@ -1,26 +1,57 @@
 import axios from 'axios'
-let addToCart=document.querySelectorAll('.add-to-cart');
-let cartCounter=document.querySelector('#cartCounter');
-// sessionStorage.setItem('name','nihal');
- async function updateCart(pizza){
-// add to cart
-try{
-   let a=await axios.post('/updateCart',pizza);
-   cartCounter.innerText=a.data.totalQty;
-   alert("item added");
-   console.log(cartCounter.innerText);
+import Noty from 'noty'
+import { initAdmin } from './admin'
+import moment from 'moment'
+
+
+let addToCart = document.querySelectorAll('.add-to-cart')
+let cartCounter = document.querySelector('#cartCounter')
+
+function updateCart(pizza) {
+   axios.post('/updateCart', pizza).then(res => {
+       cartCounter.innerText = res.data.totalQty
+       new Noty({
+           type: 'success',
+           timeout: 1000,
+           text: 'Item added to cart',
+           progressBar: false,
+       }).show();
+   }).catch(err => {
+       new Noty({
+           type: 'error',
+           timeout: 1000,
+           text: 'Something went wrong',
+           progressBar: false,
+       }).show();
+   })
 }
-catch(err){
-    console.log(err);
-}
-}
-addToCart.forEach((btn)=>{
-btn.addEventListener('click',(e)=>{
-    console.log("clicked");
-    let pizza=btn.dataset.pizza;  
-    pizza=JSON.parse(pizza);
-    updateCart(pizza);
-    
-    console.log(pizza.image);
+
+addToCart.forEach((btn) => {
+   btn.addEventListener('click', (e) => {
+       let pizza = JSON.parse(btn.dataset.pizza)
+       updateCart(pizza)
+   })
 })
-})       
+
+// Remove alert message after X seconds
+const alertMsg = document.querySelector('#success-alert')
+if(alertMsg) {
+   setTimeout(() => {
+       alertMsg.remove()
+   }, 2000)
+}
+
+
+
+
+initAdmin();
+ 
+
+
+
+
+
+
+
+
+

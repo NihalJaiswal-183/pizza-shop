@@ -33,12 +33,22 @@
                 </span>
             </div>
             <div >
-                <form action="">
-                    <input type="text" class="border border-black-400 p-2 w-1/2 mb-4" placeholder="enter your phone number">
-                    <input type="text" class="border border-black-400 p-2 w-1/2" placeholder="enter your address">
+                <form action="/orders" method="POST">
+                    <%  if(user) {%>
+                    <input type="text" name="phone_number"class="border border-black-400 p-2 w-1/2 mb-4" placeholder="enter your phone number">
+                    <input type="text" name="address"class="border border-black-400 p-2 w-1/2" placeholder="enter your address">
+                    
                     <div>
                         <button  type="submit" class="btn-primary px-6 py-4 rounded-full mb-4" style="background-color:orange">Order Now</button>
                     </div>
+                    <%} else{ %>
+                        <div>
+                            <button   class="btn-primary px-6 py-4 rounded-full mb-4" style="background-color:orange">
+                                <a href="/login">login</a>
+                                
+                            </button>
+                        </div>
+                        <%}%>
                 </form>
             <!-- </div>
             <a href="" class="inline-block cursor-pointed  btn-primary px-3 py-3  rounded-full"  style="background-color:orange">login to continue</a>

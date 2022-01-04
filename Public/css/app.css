@@ -57,3 +57,7 @@ nav li a:hover {
 section.hero {
   background: #F8F8F8;
 }
+
+a.link {
+  color: orange;
+}

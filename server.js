@@ -29,7 +29,7 @@ const corsOptions = {
   credentials: true,
   exposedHeaders: ["set-cookie"],
 };
-
+app.use(flash());
 app.use(cors(corsOptions));
 const Connection = async () => {
   const URL = `mongodb://nihaljaiswal2:codeforinterview@blog-web-shard-00-00.z7lfc.mongodb.net:27017,blog-web-shard-00-01.z7lfc.mongodb.net:27017,blog-web-shard-00-02.z7lfc.mongodb.net:27017/BLOG-WEBSITE?ssl=true&replicaSet=atlas-z8ysjx-shard-0&authSource=admin&retryWrites=true&w=majority`;
@@ -73,7 +73,7 @@ next();
 })
 
 require("./routes/web")(app);
-app.use(flash());
+
 
 app.listen(PORT, () => {
   console.log("app is running at port " + PORT);
