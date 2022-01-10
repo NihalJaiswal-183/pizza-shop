@@ -22,7 +22,7 @@ const orderSchema = new Schema({
     },
     status: {
         type: String,
-        default:'order_placed',
+        default:'send',
     }
 }, { timestamps: true });
 module.exports = mongoose.model('Order', orderSchema);

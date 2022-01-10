@@ -2,7 +2,7 @@ function cartController() {
   return {
     index: function (req, res) {
         
-      res.render("customer/cart");
+      res.render("customers/cart");
     },
     update: function (req, res) {
       if (!req.session.cart) {

@@ -9,11 +9,13 @@ const PORT = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("express-flash");
+const Emitter=require("events");
 app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 app.use(expresslayout);
 app.use(express.static("public"));
 app.use(express.json());
+
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
@@ -31,8 +33,11 @@ const corsOptions = {
 };
 app.use(flash());
 app.use(cors(corsOptions));
+
+const eventEmitter=new Emitter()
+app.set('eventEmitter',eventEmitter)
 const Connection = async () => {
-  const URL = `mongodb://nihaljaiswal2:codeforinterview@blog-web-shard-00-00.z7lfc.mongodb.net:27017,blog-web-shard-00-01.z7lfc.mongodb.net:27017,blog-web-shard-00-02.z7lfc.mongodb.net:27017/BLOG-WEBSITE?ssl=true&replicaSet=atlas-z8ysjx-shard-0&authSource=admin&retryWrites=true&w=majority`;
+  const URL =process.env.MONGO_CONNECTION_URL;
   try {
     await mongoose.connect(URL, {
       useUnifiedTopology: true,
@@ -66,15 +71,39 @@ app.use(passport.initialize());
 app.use(passport.session());
 //global declration
 app.use((req,res,next)=>{
-    console.log(req.session);
 res.locals.session=req.session
 res.locals.user=req.user
 next();
 })
 
 require("./routes/web")(app);
+app.use((req,res)=>{
+  res.status(404).send('<h1>404, Page not found</h1>')
+})
 
-
-app.listen(PORT, () => {
+const server =app.listen(PORT, () => {
   console.log("app is running at port " + PORT);
 });
+
+
+const io=require('socket.io')(server,{
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"]
+}
+})
+io.on('connection',(socket)=>{
+socket.on('join',(orderId)=>{
+  socket.join(orderId);
+  
+})
+})
+
+eventEmitter.on('orderUpdated', (data) => {
+  io.to(`order_${data.id}`).emit('orderUpdated', data)
+})
+
+eventEmitter.on('orderPlaced', (data) => {
+  // console.log(data);
+  io.to(`adminRoom`).emit('orderPlaced', data)
+})

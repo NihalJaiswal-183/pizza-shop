@@ -1,5 +1,4 @@
 const User = require('../../models/pizzaUser')
-
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 function authController() {
