@@ -13,4 +13,5 @@ cart page
 order status
 ![pj3](https://user-images.githubusercontent.com/70386494/164058741-54ce3926-41d4-454c-ace3-1894ae2dc3f2.png)
 user order history
-![pj3](https://user-images.githubusercontent.com/70386494/164059566-c13ca208-e03f-44ca-81bd-e83f4fb2dfce.png)
+
+![pj39](https://user-images.githubusercontent.com/70386494/164061686-25e2267f-43ff-438c-a82e-a83dfd0f7849.png)
