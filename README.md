@@ -6,7 +6,7 @@ menu page
 user authentication
 
 ![ghjjg](https://user-images.githubusercontent.com/70386494/164061518-e43f10b1-0228-4c76-bbd9-4c05d54674a7.png)
-dmin page
+admin page
 ![pj2](https://user-images.githubusercontent.com/70386494/164058700-71ff5ac5-5986-4581-ad29-9e363d54c0dd.png)
 cart page
 ![Screenshot (5)](https://user-images.githubusercontent.com/70386494/164059429-922309f3-1f09-488d-8cc7-6dd01c2b64a0.png)
